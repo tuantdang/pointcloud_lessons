@@ -24,7 +24,9 @@ if __name__=="__main__":
     if data == 'bin':       # Kitti
         for path in glob(f'./data/{data}_samples/*'):
             pcd_arr, pcd_feature = load_bin(path) 
-            draw_point_clouds(array = pcd_arr[:,:3], color = np.ones(pcd_arr.shape[0], dtype = "int") , name = path.split('/')[2])
+            # draw_point_clouds(array = pcd_arr[:,:3], color = np.ones(pcd_arr.shape[0], dtype = "int") , name = path.split('/')[2])
+            draw_point_clouds(array = pcd_arr[:,:3], color = None, name = path.split('/')[2])
+            break
     if data == 'ply':       # PCN
         for path in glob(f'./data/{data}_samples/*'):
             pcd_arr, pcd_color = load_ply(path)
