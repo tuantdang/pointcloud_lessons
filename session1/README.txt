@@ -29,7 +29,7 @@ Lệnh chạy:
     - python registration.py
 6.rgbd_reconstruction.py
 Lệnh chạy:
-    - python rgbd_reconstruction.py 0
+    - python rgbd_rescontruction.py 0
     - python rgbd_reconstruction.py 1
     - python rgbd_reconstruction.py 2
 

@@ -26,17 +26,17 @@ if __name__ == "__main__":
                                     [0.487, 0.255, 0.835, -1.4], 
                                     [0.0, 0.0, 0.0, 1.0]])
     draw_registration_result(source, target, trans_init, "Initial alignment")
-    evaluation = o3d.pipelines.registration.evaluate_registration(
-        source, target, threshold, trans_init)
-    print(evaluation)
-    reg_p2p_matrix = point_to_point_ICP(source, target, threshold, trans_init)
-    evaluation = o3d.pipelines.registration.evaluate_registration(
-        source, target, threshold, reg_p2p_matrix)
-    print(evaluation)
+    # evaluation = o3d.pipelines.registration.evaluate_registration(
+    #     source, target, threshold, trans_init)
+    # print(evaluation)
+    # reg_p2p_matrix = point_to_point_ICP(source, target, threshold, trans_init)
+    # evaluation = o3d.pipelines.registration.evaluate_registration(
+    #     source, target, threshold, reg_p2p_matrix)
+    # print(evaluation)
     reg_p2l_matrix = point_to_plane_ICP(source, target, threshold, trans_init)
-    evaluation = o3d.pipelines.registration.evaluate_registration(
-        source, target, threshold, reg_p2l_matrix)
-    print(evaluation)
+    # evaluation = o3d.pipelines.registration.evaluate_registration(
+    #     source, target, threshold, reg_p2l_matrix)
+    # print(evaluation)
     
     
     

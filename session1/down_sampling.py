@@ -24,19 +24,18 @@ if __name__ == "__main__":
         
     print("Load a ply point cloud, print it, and render it")
     pcd = o3d.io.read_point_cloud(path)
+    pcd.transform([[1, 0, 0, 0], [0, -1, 0, 0], [0, 0, -1, 0], [0, 0, 0, 1]])
     print(pcd)
     print(np.asarray(pcd.points))
-    o3d.visualization.draw_geometries([pcd])
-
-
-    
+   
+    o3d.visualization.draw_geometries([pcd], width=800, height=600, left=50, top=50)
     print(f"Downsample the point cloud with a voxel of {voxel_size}")
     downpcd = voxel_grid_sampling(pcd, voxel_size)
-    o3d.visualization.draw_geometries([downpcd], window_name  = "voxel_grid_sampling")
+    o3d.visualization.draw_geometries([downpcd], window_name  = "voxel_grid_sampling", width=800, height=600, left=50, top=50)
     
     
     
     print(f"Farthest point sampling with number of points is {num_points}")
     downpcd = farthest_point_sampling(pcd, num_points)
-    o3d.visualization.draw_geometries([downpcd], window_name  = "farthest_point_sampling")
+    o3d.visualization.draw_geometries([downpcd], window_name  = "farthest_point_sampling", width=800, height=600, left=50, top=50)
     

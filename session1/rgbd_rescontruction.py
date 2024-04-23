@@ -34,7 +34,7 @@ def get_xyz_from_pts(u, v, depth, cx=319.5, cy=239.5, fx=525.0, fy=525.0):
 
 def show_rgbd(rgb, depth):
     plt.subplot(1, 2, 1)
-    plt.title('Grayscale image')
+    plt.title('RGB image')
     plt.imshow(rgb)
     plt.subplot(1, 2, 2)
     plt.title('Depth image')
@@ -49,7 +49,7 @@ def np_to_pc(points, colors):
     
 def get_pcl(name = "0"):
     rgb = cv2.cvtColor(cv2.imread(f"./data/rgbd/{name}.jpg", cv2.IMREAD_UNCHANGED), cv2.COLOR_BGR2RGB) #read rgb
-    print(rgb[0:5,0:5])
+    # print(rgb[0:5,0:5])
     depth = cv2.imread(f"./data/rgbd/{name}.png", cv2.IMREAD_UNCHANGED)
     h, w = depth.shape
     print(w, h)
